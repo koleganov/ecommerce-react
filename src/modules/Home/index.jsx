@@ -9,9 +9,8 @@ const Home = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await fetch("https://fakestoreapi.com/products");
+      const response = await fetch("https://fakestoreapi.com/products?limit=12");
       const data = await response.json();
-      console.log(data);
       setProducts(data);
     };
     fetchProducts();
@@ -31,7 +30,7 @@ const Home = () => {
       {products.length > 0 ? (
         <Products products={products} />
       ) : (
-        <div>Loading....</div>
+        <div className="font-medium text-center">Loading....</div>
       )}
       <FeatureCard />
       <Stats />
