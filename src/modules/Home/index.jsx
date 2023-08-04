@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import Hero from "../../components/Hero";
-import Products from "../../components/Products";
-import FeatureCard from "../../components/FeatureCard";
+import ProductCard from "../../components/ProductCard";
 import Stats from "../../components/StatCard";
+import Categories from "../../components/Categories";
 
 const Home = () => {
   const [products, setProducts] = React.useState([]);
@@ -19,6 +19,7 @@ const Home = () => {
   return (
     <>
       <Hero />
+      <Categories />
       <div className="flex flex-col text-center w-full mb-20">
         <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">
           Products
@@ -28,11 +29,10 @@ const Home = () => {
         </h1>
       </div>
       {products.length > 0 ? (
-        <Products products={products} />
+        <ProductCard products={products} />
       ) : (
         <div className="font-medium text-center">Loading....</div>
       )}
-      <FeatureCard />
       <Stats />
     </>
   );
