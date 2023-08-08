@@ -17,7 +17,7 @@ const Categories = () => {
   }, []);
 
   if (categories.length === 0) {
-    return <div>Loading...</div>;
+    return <div className="text-center mt-5">Loading...</div>;
   }
 
   return <FeatureCard cards={categories} />;
